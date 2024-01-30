@@ -9,7 +9,7 @@ export class AssignmentRepository {
     const assignments = this._assigmentModel.aggregate([
       {
         $match: {
-          _id
+          _id,
         }
       },
       {
@@ -27,5 +27,7 @@ export class AssignmentRepository {
 
     return assignments
   }
+
+
 
 };

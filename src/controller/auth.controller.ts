@@ -23,7 +23,7 @@ export const userLogin = (req: Request, res: Response) => {
 export const updateProfilePic = async (req: Request, res: Response) => {
   const userId = req.user?.regData._id as string;
   const { proPic } = req.body;
-  const profile = await AuthService.updateProPic(userId, proPic);
+  const profile = await AuthService.updateProPic(proPic, userId);
 
   res.status(200).send(profile);
 }

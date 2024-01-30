@@ -26,7 +26,8 @@ export const userSchema = new mongoose.Schema({
     required: true
   },
   proPic: {
-    type: String
+    type: String,
+    default: "https://wallpapers.com/images/hd/funny-profile-picture-9gkayiu1i7j211fg.jpg"
   }
 });
 userSchema.plugin(passportLocalMongoose);
