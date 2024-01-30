@@ -30,8 +30,11 @@ export const AssignmentSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: Object.values(assignementStatusEnum)
+  },
+},
+  {
+    timestamps: true
   }
-
-});
+);
 
 export const AssignmentModel = mongoose.model<IAssignment>('assignment', AssignmentSchema)

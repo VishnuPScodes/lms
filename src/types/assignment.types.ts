@@ -4,4 +4,10 @@ export interface IAssignmentReturnValue {
   attachments: string[],
   author: string,
   status: string
+};
+
+export interface IGetAssignmentParams {
+  _id: string;
+  limit: number;
+  skip: number;
 }

@@ -30,7 +30,20 @@ class AuthService {
     if (!user) {
       throw new BadRequestError('Unable to login');
     }
+
     return user
+  }
+
+  async updateProPic(proPic: string, userId: string) {
+    const profile = await this._authRepository.updateProPic(proPic, userId);
+    if (!profile) {
+      throw new BadRequestError("User not found");
+    }
+
+    return {
+      message: "Profile updated",
+      data: profile
+    }
   }
 
 }

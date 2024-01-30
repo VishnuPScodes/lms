@@ -22,5 +22,9 @@ export class AuthRepository {
 
     return user
   }
+  async updateProPic(proPic: string, userId: string) {
+    const profile = this._usermodel.updateOne({ _id: userId }, { proPic });
+    return profile;
+  }
 
 };
