@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
-const mongoUrl = process.env.MONGO_URL
 
-export const connect = async () => {
+export const connect = async (mongoUrl: any) => {
   if (mongoUrl) {
     return mongoose.connect(mongoUrl)
   }

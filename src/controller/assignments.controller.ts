@@ -1,8 +1,10 @@
 import { AssignmentModel } from "../models/assignments.model"
 import { Request, Response } from "express";
+import assignmentsService from "../services/assignments.service";
 
 export const getAllAssignments = async (req: Request, res: Response) => {
-  //const user = req.user.id;
-  const allAssignments = await AssignmentModel.find().select('title description attatchments author status');
+  const userId = req.user?.regData._id as string;
+
+  const allAssignments = await assignmentsService.getAssignments(userId)
   res.status(200).send(allAssignments);
 };

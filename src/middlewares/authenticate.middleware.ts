@@ -1,9 +1,14 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
-interface User {
-  firstName: string;
-  lastName: string;
+export interface User {
+  regData: {
+    _id: string;
+    phoneNumber: number;
+    proPic: string;
+    firstName: string;
+    lastName: string;
+  }
 }
 
 const verifyToken = (token: string): Promise<User> => {
@@ -44,7 +49,7 @@ export const isAuthenticate = async (
     req.user = user;
   } catch (error) {
     res.status(400).send({ message: 'Authorization token was not provided' });
-    return; // Ensure to return after sending the response in case of an error
+    return 'some thing went wrong'
   }
 
   console.log(req.user);

@@ -8,8 +8,9 @@ export class AuthRepository {
 
   async createUser(params: IUserRegParams) {
     const { firstName, lastName, email, phoneNumber, proPic } = params;
-    const user = this._usermodel.create({ firstName, lastName, email, phoneNumber, proPic });
-
+    console.log('here its fine')
+    const user = await this._usermodel.create({ firstName, lastName, email, phoneNumber, proPic });
+    console.log('reached', user)
     return user;
   }
 
