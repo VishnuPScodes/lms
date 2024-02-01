@@ -9,3 +9,10 @@ export const createResponseForAssignment = async (req: Request, res: Response) =
 
   res.status(200).send(allAssignments);
 };
+
+export const removeUserSubmission = async (req: Request, res: Response) => {
+  const assignmentId = req.params.assignmentId;
+  const assignment = await userResponseService.removeSubmission(assignmentId);
+
+  res.status(201).send(assignment);
+};

@@ -14,7 +14,16 @@ class UserResponseService {
     }
 
     return assignments;
-  }
+  };
+
+  async removeSubmission(assignmentId: string) {
+    const assignment = await this._userResponseRepository.removeSubmission(assignmentId);
+    if (!assignmentId) {
+      throw new BadRequestError('Could not remove user submission!')
+    }
+
+    return assignment;
+  };
 };
 
 export default new UserResponseService(new UserReponseRepository);

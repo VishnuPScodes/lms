@@ -17,4 +17,4 @@ export const createMailToAdmin = async (req: Request, res: Response) => {
   const createdMailToAdmin = await MailToAdminServices.createMailToAdmin({ userId, ...emailData })
   res.status(200).send(createdMailToAdmin);
 
-}
+};

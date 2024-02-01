@@ -36,5 +36,10 @@ export class UserReponseRepository {
 
     return assignment;
   }
+  async removeSubmission(assignmentId: string) {
+    const assignment = await this._assigmentModel.findOneAndDelete({ _id: assignmentId });
+
+    return assignment;
+  }
 
 };

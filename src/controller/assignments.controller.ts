@@ -13,3 +13,9 @@ export const getAllAssignments = async (req: Request, res: Response) => {
 
   res.status(200).send(allAssignments);
 };
+
+// export const updateAssignment = async (req: Request, res: Response) => {
+//   const userId = req.user?.regData._id;
+//   const { page, limit } = req.query;
+//   const
+// }
