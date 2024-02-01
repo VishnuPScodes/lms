@@ -5,11 +5,11 @@ import { IAssignmentReturnValue, IGetAssignmentParams } from "../types/assignmen
 export class AssignmentRepository {
   private _assigmentModel = AssignmentModel;
   async getAssignments(params: IGetAssignmentParams) {
-    const { _id, limit, skip } = params;
+    const { batch, limit, skip } = params;
     const assignments = this._assigmentModel.aggregate([
       {
         $match: {
-          _id,
+          batch,
         }
       },
       {

@@ -26,8 +26,14 @@ export const mailToAdminSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: Object.values(mailStatusEnum)
-  }
+  },
+  hasUserViewed: {
+    type: Boolean,
+    default: true
+  },
+
 });
+
 export interface IMailToAdmin {
   userId: string;
   message: [{
@@ -36,6 +42,7 @@ export interface IMailToAdmin {
   }
   ],
   status: string;
+  hasUserViewed: boolean
 }
 
 export const mailToAdminModel = mongoose.model<IMailToAdmin>('mails', mailToAdminSchema);

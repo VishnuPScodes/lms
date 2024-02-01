@@ -1,18 +1,21 @@
 import mongoose from 'mongoose';
 
-export interface IAssignment {
+export interface IUserResponse {
   title: string,
   description: string,
   attachments: string[],
-  author: string,
-  status: string
-}
+  userId: string,
+  status: string,
+  batch: string
+};
+
 export enum assignementStatusEnum {
-  SUBMITED = 'submitted',
   VALUATED = 'valuated',
+  OPEN = 'open',
   NEW = 'new'
-}
-export const AssignmentSchema = new mongoose.Schema({
+};
+
+export const userResponseSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -23,7 +26,7 @@ export const AssignmentSchema = new mongoose.Schema({
   attachments: {
     type: [String],
   },
-  author: {
+  userId: {
     type: mongoose.Types.ObjectId,
     required: true
   },
@@ -34,11 +37,11 @@ export const AssignmentSchema = new mongoose.Schema({
   batch: {
     type: String,
     required: true
-  }
+  },
 },
   {
     timestamps: true
   }
 );
 
-export const AssignmentModel = mongoose.model<IAssignment>('assignment', AssignmentSchema)
+export const UserResponseModel = mongoose.model<IUserResponse>('userResponse', userResponseSchema);

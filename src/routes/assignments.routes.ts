@@ -7,5 +7,6 @@ const assignmentRouter = express.Router();
 
 assignmentRouter.get('/', isAuthenticate, getAllAssignments);
 
+
 export default assignmentRouter
 

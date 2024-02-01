@@ -3,11 +3,12 @@ export interface IAssignmentReturnValue {
   description: string,
   attachments: string[],
   author: string,
-  status: string
+  status: string,
+  batch: string
 };
 
 export interface IGetAssignmentParams {
-  _id: string;
+  batch: string;
   limit: number;
   skip: number;
 }
