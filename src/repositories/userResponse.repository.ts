@@ -4,7 +4,7 @@ import { IGetAssignmentParams } from "../types/assignment.types";
 import { IUserResponseParams } from "../types/userResponse.types";
 
 
-export class AssignmentRepository {
+export class UserReponseRepository {
   private _assigmentModel = UserResponseModel;
   async getResponses(params: IGetAssignmentParams) {
     const { batch, limit, skip } = params;
