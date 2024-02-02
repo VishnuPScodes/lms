@@ -5,7 +5,7 @@ import { userResponseValidator } from '../middlewares/validators/userResponse.va
 
 const userResponseRouter = express.Router();
 
-userResponseRouter.post('/', isAuthenticate, userResponseValidator, createResponseForAssignment);
-userResponseRouter.delete('/:assignmentId', isAuthenticate, removeUserSubmission);
+userResponseRouter.post('/submit', isAuthenticate, userResponseValidator, createResponseForAssignment);
+userResponseRouter.delete('/delete/:assignmentId', isAuthenticate, removeUserSubmission);
 
 export default userResponseRouter
