@@ -33,7 +33,8 @@ export const tokenSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: Object.values(tokenStatusEnun)
+    enum: Object.values(tokenStatusEnun),
+    default: tokenStatusEnun.NEW
   }
 });
 
